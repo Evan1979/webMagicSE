@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ext">
+    <output-path>$PROJECT_DIR$/out/artifacts/ext</output-path>
+    <root id="archive" name="ext.jar">
+      <element id="module-output" name="webmagic-core" />
+    </root>
+  </artifact>
+</component>
