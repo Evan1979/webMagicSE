@@ -187,18 +187,18 @@
                          + "&magnetLink=" +  row.magnetLink
                          + "&magnetDownloadTimes=" +  row.magnetDownloadTimes-->
 
-                            <div class="form-group" id="divFileSize">
-                                <p class="form-control">divFileSize</p>
+                            <div class="form-group">
+                                <p class="form-control" id="divFileSize">divFileSize</p>
                             </div>
-                            <div class="form-group" id="divLinkKey">
-                                <p class="form-control">divLinkKey</p>
+                            <div class="form-group" >
+                                <p class="form-control" id="divLinkKey">divLinkKey</p>
                             </div>
-                            <div class="form-group" id="divDownloadTimes">
-                                <p class="form-control">divDownloadTimes</p>
+                            <div class="form-group">
+                                <p class="form-control"  id="divDownloadTimes">divDownloadTimes</p>
                             </div>
 
-                            <div class="form-group">
-                                <input type="email" class="form-control input-sm align" id="magnetLink" placeholder="">
+                            <div class="form-group" >
+                                <input type="text" class="form-control input-sm align" id="magnetLink" placeholder="">
                             </div>
                         </div>
                     </div>
@@ -434,7 +434,7 @@
         // var params ="?magnetLinkKey=" + row.magnetLinkKey + "&magnetLinkFileSize=" +  row.magnetLinkFileSize  + "&magnetLink=" +  row.magnetLink  + "&magnetDownloadTimes=" +  row.magnetDownloadTimes
         // var url = "detail" + params;
         // window.location.href= url;
-        getMagnetLink(row.magnetLink) ;
+        getMagnetLink(row) ;
     });
 
     //
@@ -452,10 +452,17 @@
     });
 
     //获取链接模态框
-    function getMagnetLink(magnetLink) {
+    function getMagnetLink(row) {
 
-        //清空输入内容
-        var link = $('#magnetLink').val(magnetLink);
+        //清空输入内容   divFileSize divLinkKey divDownloadTimes
+        // var params ="?magnetLinkKey=" + row.magnetLinkKey +
+        // "&magnetLinkFileSize=" +  row.magnetLinkFileSize  + "&magnetLink=" +  row.magnetLink  + "&magnetDownloadTimes=" +  row.magnetDownloadTimes
+
+        var link = $('#magnetLink').val(row.magnetLink);
+        var link = $('#divFileSize').html(row.magnetLinkFileSize);
+        var link = $('#divLinkKey').html(row.magnetLinkKey);
+        var link = $('#divDownloadTimes').html("下载次数: "+row.magnetDownloadTimes);
+
         $('#getDetail').modal('show');
 
         $('#getDetail').on('shown.bs.modal', function () {

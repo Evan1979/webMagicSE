@@ -23,7 +23,7 @@ import java.util.Map;
 public class TxtParseUtils {
 
     private static final Integer ONE = 1;
-    private List<String> list = new LinkedList<>();
+    private List<String> list = new LinkedList<String>();
     public String[] getCrawlerItems(String host){
         /* 读取数据 */
         try {

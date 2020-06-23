@@ -42,7 +42,7 @@ public class MagnetLinkProcessor implements PageProcessor {
     // @Autowired
     // private MagnetLinkService magnetLinkService;
 
-    Set<String> setLinks = new HashSet<>();
+    Set<String> setLinks = new HashSet<String>();
     private int iexistLink = 1;
     private Spider spider;
 

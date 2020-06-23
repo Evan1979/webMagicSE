@@ -188,7 +188,7 @@ public class CrawlerParamsController {
          * @param keyValueMap 键值对Map
          */
         String fileName = "crawlerparams.properties";
-        Map<String, String> keyValueMap = new HashMap<>();
+        Map<String, String> keyValueMap = new HashMap<String,String>();
         //获取文件路径
         String filePath = this.getClass().getClassLoader().getResource("config/"+fileName).toURI().getPath();
         System.out.println("propertiesPath:" + filePath);

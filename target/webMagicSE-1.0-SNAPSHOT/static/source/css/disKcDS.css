@@ -1,0 +1,56 @@
+.tableDiv{
+    margin: 0 auto;
+    width: 800px;
+    background-color: #ffffff;
+}
+
+table{
+    width: 100%;
+}
+
+table,td,th{
+    border: 1px solid #ff8566;
+    border-collapse: collapse;
+
+}
+tr th{
+    background-color: yellow;
+}
+
+.greenTd{
+    background-color: #8fff51;
+}
+tr th,td{
+    height: 30px;
+}
+
+
+/*tr td:first-child{*/
+/*    width: 5%;*/
+/*}*/
+
+
+tr td:nth-child(2){
+    width: 15%;
+}
+
+tr td:nth-child(3){
+    width: 10%;
+}
+
+tr td:nth-child(4){
+    width: 30%;
+}
+
+tr td:nth-child(8){
+    width: 10%;
+}
+
+a{
+    padding-right: 10px;
+}
+
+td{
+    text-align: center;
+    /*width: 12.5%;*/
+}

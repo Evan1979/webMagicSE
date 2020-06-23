@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: Evan
+Main-Class: cn.magnet.Application
+
+Created-By: Apache Maven 3.6.1
+Build-Jdk: 1.8.0_151
+

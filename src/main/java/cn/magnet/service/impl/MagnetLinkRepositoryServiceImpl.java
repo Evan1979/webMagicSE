@@ -49,7 +49,6 @@ public class MagnetLinkRepositoryServiceImpl implements MagnetLinkRepositoryServ
 
         //判断关键字是否为空     是的话进行默认赋值
 
-        System.out.println(0000);
 
         //调用dao的方法执行查询
         // Page<MagnetLinkField> pages = this.magnetLinkRepository.findByMagnetLinkAndMagnetLinkKeyAndFromWhichSe(pmagnet_link,
@@ -57,8 +56,6 @@ public class MagnetLinkRepositoryServiceImpl implements MagnetLinkRepositoryServ
         //调用dao的方法执行查询
         Page<MagnetLinkField> pages = this.magnetLinkRepository.findByMagnetLinkKey(pmagnetlink_key, PageRequest.of(page-1,300));
 
-        System.out.println(1111);
-        // System.out.println("123page before");
         //封装结果对象MagnetLinkResult
         MagnetLinkResult magnetLinkResult = new MagnetLinkResult();
 
