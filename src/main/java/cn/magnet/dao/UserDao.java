@@ -31,4 +31,7 @@ public interface UserDao extends JpaRepository<User, Long> {  //long主键类型
     @Query(value="update User set uName=:newName,uEmail=:newEmail,uPhone=:newPhone where uId =:id")
     public int updateUser(@Param("id") Long id, @Param("newName") String newName,
                           @Param("newEmail") String newEmail, @Param("newPhone") String newPhone);
+
+    @Query(value="select * from user where uName = ? and uPassword=?" ,nativeQuery=true)
+    public User findByUNameAndUPassword(String name,String password);
 }

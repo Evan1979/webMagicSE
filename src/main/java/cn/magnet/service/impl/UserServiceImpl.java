@@ -24,6 +24,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
+
     @Autowired
     UserDao userDao;
 
@@ -71,10 +72,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserByNameAndPassword(User user) {
+        //执行查询
+        User checkedUser = this.userDao.findByUNameAndUPassword(user.getuName(), user.getuPassword());
+        // System.out.println("1111");
+        //
+        // if (checkedUser != null){
+        //     System.out.println("byUNameAndUPassword=="+ checkedUser);
+        //
+        // }
+
+        return checkedUser;
+    }
+
+    @Override
     public Page<User> findUserByPage(int page, int rows) {
         Page<User> users = this.userDao.findAll(PageRequest.of(page - 1, rows));
         return users;
     }
+
 
 
     @Override

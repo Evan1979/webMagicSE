@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -26,7 +27,6 @@ public class UserController {
 
     @Autowired
     UserService userService;
-
 
     @RequestMapping(value = "getUsers",method = RequestMethod.POST)
     public Page<User> getUsers(String state){
@@ -69,4 +69,29 @@ public class UserController {
         return result;
 
     }
+
+
+    @RequestMapping(value = "verifyUser",method = RequestMethod.POST)
+    // public String verifyUser(Long id, String name, String email, String phone){
+    public String verifyLoginUser(String name, String password, HttpSession session){
+
+        String result = "true";
+
+        User u = new User();
+        u.setuName(name);
+        u.setuPassword(password);
+        User checkedUser = this.userService.findUserByNameAndPassword(u);
+
+         // System.out.println(checkedUser);
+
+         if (checkedUser == null){
+             result = "false";
+         }else {
+             session.setAttribute("userSession",checkedUser);
+         }
+
+        return result;
+
+    }
+
 }

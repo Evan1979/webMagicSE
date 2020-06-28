@@ -31,6 +31,15 @@ public interface UserService {
      */
     public List<User> findUser(User user);
 
+
+    /**
+     * 根据用户名和用户密码查找用户
+     * @param user
+     * @return
+     */
+    public User findUserByNameAndPassword(User user);
+
+
     /**
      * 获取所有用户信息
      * @param page
