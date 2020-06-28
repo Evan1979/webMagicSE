@@ -64,7 +64,6 @@
             <h1 style="margin-top: 60px; margin-left: 50px; color: whitesmoke">
                 欢迎访问极光磁力搜索SE <br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to here!
-                <a href="testModelAndView"></a>
             </h1>
         </div>
         <div class="col-md-4 col-sm-6" id="div_login">
@@ -145,6 +144,11 @@
             // dataType:"json",
             success:function (data) {
                 console.log(data);
+
+                var a = document.createElement('a');
+                a.setAttribute('href', 'search.html');
+                document.body.appendChild(a);
+                a.click();
             },
             error:function () {
                 console.log("error");

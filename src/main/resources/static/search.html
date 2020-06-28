@@ -216,6 +216,36 @@
 
 <script>
 
+    window.onload=function(){
+
+        //获取用户信息
+        $.ajax({
+            url:"getLoginInfo",
+            dataType: 'json',
+            type:'post',
+            success: function (data) {
+                // uBirthday: "2020-06-28T00:00:00.000+0000"
+                // uCreateDate: "2020-06-25T00:00:00.000+0000"
+                // uEmail: "999999999@qq.com"
+                // uId: 24
+                // uName: "kelly"
+                // uPassword: "123"
+                // uPhone: "17502005555"
+                // uRank: 3
+                // console.log("获取用户信息中");
+                // console.log(data);
+                $('#user_name').html(data.uName);
+                $('#message_tag').html(data.uRank);
+            },
+            error:function () {
+                $('#user_name').html("please Login");
+                $('#message_tag').html("--");
+                console.log("获取用户数据失败");
+            }
+        })
+
+    }
+
     var $table = $('#roleTable');
     loadTableData("*");
 
@@ -239,7 +269,7 @@
 
             //分页设置
             pagination: true, // 在表格底部显示分页信息(显示第 x 到第 x 条记录，总共 x 条记录)，翻页条 // 注意：数据页页数超过1页会才展示翻页条
-            paginationVAlign: 'bottom', // 指定分页条在垂直方向的位置。'top'，'bottom' 或 'both'。
+            paginationVAlign: 'top', // 指定分页条在垂直方向的位置。'top'，'bottom' 或 'both'。
             sidePagination: 'client' ,//'server',
             // 设置在哪里进行分页，可选值为 'client' 或者 'server'。
             // 注意：设置 'server'时，必须设置服务器数据地址（url）或者重写ajax方法。

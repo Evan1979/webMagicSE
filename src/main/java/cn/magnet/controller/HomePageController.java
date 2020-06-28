@@ -3,6 +3,7 @@ package cn.magnet.controller;
 import cn.magnet.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -13,28 +14,21 @@ import javax.servlet.http.HttpSession;
  * @author Evan Ma
  * @since
  **/
-@Controller
+@RestController
 public class HomePageController {
 
-
-
     /**
-     * 登录的时候进到主页面
+     * 登录的时候获取用户信息
      * @return
      */
-    @RequestMapping("/testModelAndView")
-    public ModelAndView requestMapping(HttpSession session) {
-        ModelAndView mv = new ModelAndView("index");
+    @RequestMapping("/getLoginInfo")
+    public User requestMapping(HttpSession session) {
         System.out.println(session.getAttribute("userSession"));
-        User userMapper = (User)session.getAttribute("userSession");
-        if(userMapper!=null) {
-            mv.addObject("user", userMapper);
-        }else {
-             userMapper.setuName("please Login");
-             userMapper.setuRank(-1);
+        User userMapper = (User) session.getAttribute("userSession");
+        if (userMapper == null) {
+            userMapper.setuName("please Login");
+            userMapper.setuRank(-1);
         }
-        //跳转到哪个页面
-        mv.setViewName("search");
-        return mv;
+        return userMapper;
     }
 }

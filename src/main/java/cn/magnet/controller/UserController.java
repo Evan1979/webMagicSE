@@ -72,7 +72,6 @@ public class UserController {
 
 
     @RequestMapping(value = "verifyUser",method = RequestMethod.POST)
-    // public String verifyUser(Long id, String name, String email, String phone){
     public String verifyLoginUser(String name, String password, HttpSession session){
 
         String result = "true";
