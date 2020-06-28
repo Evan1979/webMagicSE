@@ -34,7 +34,6 @@ public class ESTest {
     public void createIndex() {
         this.elasticsearchTemplate.createIndex(MagnetLinkField.class);
         this.elasticsearchTemplate.putMapping(MagnetLinkField.class);
-
     }
 
     @Test

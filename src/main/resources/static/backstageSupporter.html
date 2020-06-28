@@ -614,7 +614,12 @@
                 <!-- 可以改用列表 -->
                 <!--表格列表-->
                 <div class="panel panel-default panel-bs-table-myself-style">
-                    <div class="panel-heading" id="setParams">参数设置</div>
+                    <div class="panel-heading" id="setParams">
+                        ElasticSearch操作
+                        <button style="margin-left: 130px;" class="btn btn-xs btn-green" id="updateIndex">创建索引库</button>
+                        <button class="btn btn-xs btn-danger" id="deleteIndex">删除索引库</button>
+                        <button class="btn btn-xs btn-default" id="syncIndex">同步数据库和索引库</button>
+                    </div>
                     <div class="panel-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover text-nowrap" id="params-table">
@@ -1346,7 +1351,50 @@
         }
     }
 
-    // $('#changeParameter').on('click',function () {
-    // });
+    $('#updateIndex').on('click',function () {
+        $.ajax({
+            url:"createIndex",
+            type:"post",
+            dataType: "json",
+
+            success:function (result) {
+                if (result === "true"){
+                    alert("更新成功");
+                }
+            },
+            error:function () {
+                console.log("data error");
+            }
+        });
+    });
+
+    $('#deleteIndex').on('click',function () {
+        $.ajax({
+            url:"deleteIndex",
+            type:"post",
+            success:function (result) {
+                if (result === "true"){
+                    alert("删除成功");
+                }
+            },
+            error:function () {
+                console.log("data error");
+            }
+        });
+    });
+    $('#syncIndex').on('click',function () {
+        $.ajax({
+            url:"magnetLinkData",
+            type:"post",
+            success:function (result) {
+                if (result === "true"){
+                    alert("同步成功");
+                }
+            },
+            error:function () {
+                console.log("data error");
+            }
+        });
+    });
 
 </script>
