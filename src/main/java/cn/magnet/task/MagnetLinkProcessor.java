@@ -91,6 +91,10 @@ public class MagnetLinkProcessor implements PageProcessor {
     @Value("${site.setHttpProxy}")
     private String setHttpProxy;
 
+    @Value("${file.crawlerItemsPath}")
+    String crawlerItemsPath;
+
+
     @Override
     public void process(Page page) {
         String html = page.getHtml().toString();
@@ -218,7 +222,7 @@ public class MagnetLinkProcessor implements PageProcessor {
 
         TxtParseUtils tpu = new TxtParseUtils();
         String host = "http://www.torkitty.com/search/";
-        String[] urls = tpu.getCrawlerItems(host);
+        String[] urls = tpu.getCrawlerItems(host,crawlerItemsPath);
 
         // String urls[] = {"http://www.torkitty.com/search/这个杀手不太冷/","http://www.torkitty.com/search/肖申克的救赎/"};
         spider = Spider.create(new MagnetLinkProcessor())

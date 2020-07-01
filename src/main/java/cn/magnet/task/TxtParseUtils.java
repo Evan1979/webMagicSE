@@ -7,6 +7,12 @@ package cn.magnet.task;
  * @since
  **/
 import org.hibernate.loader.custom.Return;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,12 +30,15 @@ public class TxtParseUtils {
 
     private static final Integer ONE = 1;
     private List<String> list = new LinkedList<String>();
-    public String[] getCrawlerItems(String host){
+    public String[] getCrawlerItems(String host,String crawlerItems){
+
+
         /* 读取数据 */
         try {
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(
-                            new FileInputStream(new File("F:\\Desktop\\crawlerItems.txt")),"UTF-8"));
+                            //"C:\\Files\\crawlerItems.txt"
+                            new FileInputStream(new File(crawlerItems)),"UTF-8"));
             String lineTxt = null;
             while ((lineTxt = br.readLine()) != null) {
                 list.add(host+lineTxt);
@@ -100,4 +109,18 @@ public class TxtParseUtils {
     //     //     System.err.println("write errors :" + e);
     //     // }
     // }
+
+
 }
+// @ComponentScan({"cn.magnet"})
+// @PropertySource(value = {"classpath:config/crawlerparams.properties"},
+//         ignoreResourceNotFound = false, encoding = "GBK", name = "crawlerparams.properties")
+// class GetFilePath{
+//     @Value("${file.crawlerItemsPath}")
+//     String path = "";
+//
+//     public String getPath() {
+//         System.out.println(path);
+//         return path;
+//     }
+// }

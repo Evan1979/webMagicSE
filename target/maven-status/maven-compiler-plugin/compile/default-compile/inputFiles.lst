@@ -14,6 +14,7 @@ F:\webMagicSE\src\main\java\cn\magnet\controller\MagnetLinkController.java
 F:\webMagicSE\src\main\java\cn\magnet\controller\HomePageController.java
 F:\webMagicSE\src\main\java\cn\magnet\pojo\User.java
 F:\webMagicSE\src\main\java\cn\magnet\service\UserService.java
+F:\webMagicSE\src\main\java\cn\magnet\controller\ElasticSearchController.java
 F:\webMagicSE\src\main\java\cn\magnet\task\ProxyTest.java
 F:\webMagicSE\src\main\java\cn\magnet\controller\CrawlerParameters.java
 F:\webMagicSE\src\main\java\cn\magnet\task\TxtParseUtils.java
