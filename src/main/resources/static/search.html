@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aurora Magnet Search</title>
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
 <!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -401,23 +403,20 @@
             // {"uid":"15","uname":"ken2","upsw":"123","ulogin_time":"2020-01-01 04:38:38","ustate":"1"}]}
             total: result.total, //总页数, key名称固定为"total"
             rows: result.rows //行数据，key名称必须和bootstrapTable函数中dataField的值保持一致，默认为rows.
-
         };
-
-
     };
 
 
     function getSearchKey() {
-        console.log("you click getSearchKey()")
+        // console.log("you click getSearchKey()");
         var key = $('#keyText').val();
-        console.log(key)
+        // console.log(key);
         randomData(key);
 
     }
 
     function randomData(key) {
-        console.log("into randomData(key)")
+        // console.log("into randomData(key)");
 
         $.ajax({
             type: "post",
@@ -472,9 +471,9 @@
     //             alert('嘿，我听说您喜欢模态框...');
     //         })
     // });
-    $('#detailModal').on('click', function () {
-        getMagnetLink();
-    });
+    // $('#detailModal').on('click', function () {
+    //     getMagnetLink();
+    // });
 
     //获取链接模态框
     function getMagnetLink(row) {

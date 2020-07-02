@@ -1,8 +1,6 @@
 body{
-	background-image: url('../images/bg4.jpg');
-
+	background-image: url("../images/2.jpg");
 }
-
 .marginDiv{
 	margin: 150px 20px 20px 20px;
 	width: content-box;

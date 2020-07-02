@@ -23,9 +23,12 @@ public class HomePageController {
      */
     @RequestMapping("/getLoginInfo")
     public User requestMapping(HttpSession session) {
-        System.out.println(session.getAttribute("userSession"));
-        User userMapper = (User) session.getAttribute("userSession");
-        if (userMapper == null) {
+        User userMapper = null;
+        // System.out.println(session.getAttribute("userSession"));
+        if (session.getAttribute("userSession") != null){
+            userMapper = (User) session.getAttribute("userSession");
+        }else{
+            userMapper = new User();
             userMapper.setuName("please Login");
             userMapper.setuRank(-1);
         }

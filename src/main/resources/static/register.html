@@ -1,10 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>帐号注册</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <link rel="stylesheet" href="source/css/bootstrap.min.css">
+    <!--	<link rel="stylesheet" type="text/css" href="css/definedMyself.css">-->
+    <link rel="stylesheet" type="text/css" href="source/css/registerStyle.css">
+
+    <script src="source/js/jquery-3.4.1.js"></script>
+
+    <script type="application/javascript" src="source/js/bootstrap.min.js"></script>
+
+    <title>Registe for Aurora Magnet Search</title>
 </head>
 <body>
+<nav class="navbar navbar-fixed-top navbar-inverse nav-color " role="navigation"
+    style="background-color: rgba(15,133,151,0.83) !important;"
+>
+    <div class="container-fluid">
+        <div class="navbar-header col-sm-5  col-md-5 col-lg-8">
+            <a class="navbar-brand font-color " href="search.html" style=" color: whitesmoke !important;">
+                Aurora Magnet Search&nbsp;&nbsp;&nbsp;
+                <span style="font-size: 19px;color: white;">
+                    注册极光磁力搜索帐号</span></a>
+        </div>
+    </div>
+</nav>
+
+
+<div style="margin-bottom: 100px" class="clearfix"></div>
+
+<div class="marginDiv">
+
+
+    <div class="registerDiv">
+        <form method="post">
+            <div class="divEmail clearFix">
+
+                <div class="pswText">
+                    <label>
+                        <span class="redStar">*</span>
+                        <span class="toRight">邮箱：</span>
+                        <input class="inputEmail" type="email" name="email" id="inputEmail" value="1157047348@qq.com"/>
+                    </label>
+                </div>
+
+                <!--内容格式正确提示标签-->
+                <div class="divRightTip clearFix" id="emailDivRightTip">
+                    <div class="rightTip">
+                        <div class="divRightImg"><img src="source/images/right.png" height="23px" alt="loadingError"></div>
+                    </div>
+                </div>
+
+                <div class="divWarn clearFix" id="emailDivWarn">
+                    <div class="warnTip">
+                        <div class="divWarnImg"><img src="source/images/warn.png" height = "22px" alt="warn"></div>
+                        <div class="divText" id="emailText">邮箱格式有误</div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="pTip" id="pTip">完成注册后，邮箱为注册账号</p>
+
+            <div class="divPsw clearFix">
+                <div class="pswText">
+                    <label>
+                        <span class="redStar">*</span>
+                        <span class="toRight">创建密码：</span>
+                        <input class="inputPsw" type="password" name="psw" id="inputPsw"/>
+                    </label>
+                </div>
+
+                <!--            <div class="pswTip">为了你的账号安全，请使用与其他网络密码不同的密码</div>-->
+
+                <!--内容格式正确提示标签-->
+                <div class="divRightTip clearFix" id="pswDivRightTip">
+                    <div class="rightTip">
+                        <div class="divRightImg"><img src="source/images/right.png" height="23px" alt="loadingError"></div>
+                    </div>
+                </div>
+
+                <div class="divWarn clearFix" id="pswDivWarn">
+                    <div class="warnTip">
+                        <div class="divWarnImg"><img src="source/images/warn.png" height = "22px" alt="warn"></div>
+                        <div class="divText" id="divPswText">密码太短了，最短6位</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="divPsw clearFix">
+
+                <div class="PhoneNumText">
+
+                    <label>
+                        <span class="redStar">*</span>
+                        <span class="toRight">手机号码：</span>
+                        <input class="inputPhone" type="text" name="phoneNum" id="inputPhoneNum"/>
+                    </label>
+                </div>
+
+                <!--内容格式正确提示标签-->
+                <div class="divRightTip clearFix" id="phoneNumDivRightTip">
+                    <div class="rightTip">
+                        <div class="divRightImg"><img src="source/images/right.png" height="23px" alt="loadingError"></div>
+                    </div>
+                </div>
+
+                <div class="divWarn clearFix" id="phoneNumDivWarn">
+                    <div class="warnTip">
+                        <div class="divWarnImg"><img src="source/images/warn.png" height = "22px" alt="loadingError"></div>
+                        <div class="divText">手机号码格式不正确</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="divName clearFix">
+                <div class="NameText">
+                    <label>
+                        <span class="redStar">*</span>
+                        <span class="toRight">昵称：</span>
+                        <input class="inputNamed" type="text" name="named" id="inputName"/>
+                    </label>
+                </div>
+
+                <!--内容格式正确提示标签-->
+                <div class="divRightTip clearFix" id="nameDivRightTip">
+                    <div class="rightTip">
+                        <div class="divRightImg"><img src="source/images/right.png" height="23px" alt="loadingError"></div>
+                    </div>
+                </div>
+
+                <div class="divWarn clearFix" id="nameDivWarn">
+                    <div class="warnTip">
+                        <div class="divWarnImg"><img src="source/images/warn.png" height = "22px" alt="warn"></div>
+                        <div class="divText" id="divNameText">该昵称已经被使用</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divPhoneCode clearFix">
+
+
+                <!--内容格式正确提示标签-->
+                <div class="divRightTip clearFix" id="phoneCodeDivRightTip">
+                    <div class="rightTip">
+                        <div class="divRightImg"><img src="source/images/right.png" height="23px" alt="loadingError"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="btnDiv">
+                <button type="submit" class="btn btn-success btn-block" id="btn_sub" disabled>
+                    <span class="glyphicon glyphicon-home"></span>&nbsp;注册
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footerDiv col-lg-12">
+        ©2019 Aurora Team 粤ICP备19125431号
+    </div>
+</footer>
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        const inputBoxEmail = document.getElementById('inputEmail');
+        const inputBoxPsw = document.getElementById('inputPsw');
+        const inputBoxPhoneNum = document.getElementById('inputPhoneNum');
+        const inputBoxName = document.getElementById('inputName');
+
+        inputBoxEmail.onblur = function(){warn('inputEmail')};
+        inputBoxPsw.onblur = function(){warn('inputPsw')};
+        inputBoxPhoneNum.onblur = function(){warn('inputPhoneNum')};
+        inputBoxName.onblur = function(){warn('inputName')};
+
+    };
+
+    function warn(str) {
+        const element = document.getElementById(str);
+        var email = $('#inputEmail').val();
+        if (str === 'inputEmail'){
+            //隐藏正确提示标签
+            document.getElementById('emailDivRightTip').style.display = 'none';
+            var isExistEmail = is_exist_mail(email);
+
+            if (element.value === ""){
+                // alert("邮箱不能为空");
+                // document.getElementById('phoneNumDivWarn').style.visibility = 'visible';
+                //显示提示控件
+                document.getElementById('emailDivWarn').style.display = 'inline';
+                // return false;
+
+            }else if (!checkEmail(element.value)){
+                document.getElementById('emailDivWarn').style.display = 'inline';
+                document.getElementById('emailText').innerHTML = "邮箱格式有误";
+            }else if (isExistEmail == "true"){
+                document.getElementById('emailDivWarn').style.display = 'inline';
+                document.getElementById('emailText').innerHTML = "邮箱已被注册";
+            }
+            else {
+                document.getElementById('emailDivWarn').style.display = 'none';
+                document.getElementById('emailDivRightTip').style.display = 'inline';
+
+            }
+            document.getElementById('phoneCodeDivRightTip').style.display = 'none';
+
+        }
+
+        if(str === 'inputPsw'){
+            document.getElementById('pswDivRightTip').style.display = 'none';
+
+            //输入的密码校验
+            if (element.value === ""){
+                // alert("密码不能为空");
+                document.getElementById('divPswText').innerHTML = '密码不能为空';
+                document.getElementById('pswDivWarn').style.display = 'inline';
+                // return false;
+
+            }else if (element.value.length <= 5){
+                document.getElementById('divPswText').innerHTML = '密码最短长度为6';
+                document.getElementById('pswDivWarn').style.display = 'inline';
+            }else if (element.value.length > 5){
+                document.getElementById('pswDivWarn').style.display = 'none';
+                document.getElementById('pswDivRightTip').style.display = 'inline';
+            }
+
+            // return false;
+
+        }
+
+        //手机号格式校验
+        if (str === 'inputPhoneNum'){
+            //隐藏正确提示标签
+            document.getElementById('phoneNumDivRightTip').style.display = 'none';
+
+            if (element.value === ""){
+                // alert("手机号码不能为空");
+                // document.getElementById('phoneNumDivWarn').style.visibility = 'visible';
+                //显示提示控件
+                document.getElementById('phoneNumDivWarn').style.display = 'inline';
+                // return false;
+
+            }else if (element.value.length < 11){
+                document.getElementById('phoneNumDivWarn').style.display = 'inline';
+                document.getElementById('pTip').innerHTML = "手机号码长度必须为11";
+
+            }else if (element.value.substring(0,1) !== '1'){
+                //开头需要为13X
+                document.getElementById('phoneNumDivWarn').style.display = 'inline';
+                document.getElementById('pTip').innerHTML = "手机号码必须为1开头";
+
+            }else if (element.value.length === 11){
+                //显示正确提示标签
+                document.getElementById('phoneNumDivRightTip').style.display = 'inline';
+                //隐藏提示控件
+                document.getElementById('phoneNumDivWarn').style.display = 'none';
+                document.getElementById('pTip').innerHTML = "完成注册后，手机号码为注册账号";
+            }
+
+
+        }
+
+
+        if(str === 'inputName'){
+            document.getElementById('nameDivRightTip').style.display = 'none';
+
+            //昵称输入验证
+            // const existNameArr = ['Tom', 'Jack', 'Carson', 'Nancy', 'Fedora', 'Dove', 'Murray'];
+            const existNameArr = ['tom', 'jack', 'carson', 'nancy', 'fedora', 'dove', 'murray'];
+            var judgeExistOrNot = existNameArr.indexOf(element.value.toLowerCase());
+
+            if (element.value === ""){
+                // alert("昵称不能为空");
+                document.getElementById("divNameText").innerHTML = '昵称不能为空';
+                document.getElementById('nameDivWarn').style.display = 'inline';
+            }else if (judgeExistOrNot !== -1){
+                // alert("该昵称已经被使用");
+                document.getElementById("divNameText").innerHTML = '该昵称已经被使用';
+                document.getElementById('nameDivWarn').style.display = 'inline';
+
+            }else{
+                document.getElementById('nameDivWarn').style.display = 'none';
+                document.getElementById('nameDivRightTip').style.display = 'inline';
+                document.getElementById('btn_sub').disabled = false;
+            }
+
+
+        }
+
+    }
+
+    //判断用户输入的电子邮箱格式是否正确
+    function checkEmail(myemail){
+        var myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+        if(myReg.test(myemail)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function is_exist_mail(myemail){
+        var result = "false";
+        $.ajax({
+            type: "post",
+            data: {email: myemail
+            },
+            url: "verifyRegisterEmail",
+            // dataType: "json",
+            success: function (data) {
+                if (data === "true"){
+                    result = "true";
+                }
+                console.log(data)
+            },
+            // complete: function () {
+            // },
+            // error: function () {
+            // }
+        });
+
+        return result;
+    }
+
+    $('#btn_sub').on('click',function () {
+        var email = $('#inputEmail').val();
+        var password = $('#inputPsw').val();
+        var phone = $('#inputPhoneNum').val();
+        var name = $('#inputName').val();
+
+        $.ajax({
+            type: "post",
+            data: {
+                name:name,
+                password:password,
+                phone:phone,
+                email:email
+            },
+            url: "registerUser",
+            success: function (data) {
+                if (data === "true"){
+                    alert("注册成功，即将跳转到主页");
+                };
+                var a = document.createElement('a');
+                a.setAttribute('href', 'search.html');
+                document.body.appendChild(a);
+                a.click();
+            },
+
+            error: function () {
+                alert("注册成功")
+            }
+        });
+    })
+
+
+</script>

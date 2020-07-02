@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
             changeUser.setuPassword("123");
             //如果查询结果为空，表示用户不存在，或者已经更新了，需要新增或者更新数据库
             this.userDao.saveAndFlush(primaryUser);
+
         }else {
             //已存在   进行更新
             // primaryUser.setuName(user.getuName());
@@ -54,7 +55,7 @@ public class UserServiceImpl implements UserService {
             // primaryUser.setuEmail(user.getuEmail());
             rowsChange = this.userDao
                     .updateUser(
-                            user.getuId(), user.getuName(), user.getuEmail(), user.getuPhone()
+                            user.getuId(), user.getuName(), user.getuPassword(),user.getuEmail(), user.getuPhone()
                     );
             System.out.println("rowsChange=="+ rowsChange);
 
@@ -92,10 +93,33 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
     @Override
     public void delete(User u) {
         this.userDao.delete(u);
+    }
+
+    @Override
+    public User findUserByEmail(User u) {
+        User checkedUser = this.userDao.findByUEmail(u.getuEmail());
+
+        return checkedUser;
+    }
+
+    /**
+     * 新增用户以注册新用户
+     * @param u
+     * @return
+     */
+    @Override
+    public int addUser(User u) {
+
+        int registerResult = 1;
+        User user = this.userDao.saveAndFlush(u);
+
+        if (user == null){
+            registerResult = 0;
+        }
+        return registerResult;
     }
 
 

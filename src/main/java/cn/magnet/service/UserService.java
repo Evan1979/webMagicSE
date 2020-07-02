@@ -54,4 +54,13 @@ public interface UserService {
      * @param u
      */
     public void delete(User u);
+
+    /**
+     * 根据用户email查询用户
+     * @param u
+     * @return
+     */
+    User findUserByEmail(User u);
+
+    int addUser(User u);
 }

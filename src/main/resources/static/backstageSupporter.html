@@ -116,9 +116,9 @@
         <div class="meun-item" id="magnetLinksManager" href="#file" aria-controls="file" role="tab" data-toggle="tab"><img
                 src="./source/images/icon_user_grey.png">磁力链接资源管理
         </div>
-        <div class="meun-item" id="changePsw" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img
-                src="./source/images/icon_change_grey.png">修改密码
-        </div>
+<!--        <div class="meun-item" id="changePsw" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img-->
+<!--                src="./source/images/icon_change_grey.png">修改密码-->
+<!--        </div>-->
 
         <div class="meun-item" id="setCrawlerParams" href="#crawlerParams" aria-controls="crawlerParams" role="tab" data-toggle="tab"><img
                 src="./source/images/icon_change_grey.png">爬虫参数设置
@@ -182,7 +182,8 @@
                                 <tr id="table-thead" class="row">
                                     <th class="col-1">#</th>
                                     <th class="col-1">用户id</th>
-                                    <th class="col-2">用户名</th>
+                                    <th class="col-1">用户名</th>
+                                    <th class="col-1">用户密码</th>
                                     <th class="col-3">手机</th>
                                     <th class="col-3">邮箱</th>
                                     <th class="col-1">地区&nbsp;<span class="glyphicon glyphicon-arrow-down small"></span>
@@ -230,7 +231,15 @@
                                         <div class="form-group ">
                                             <label for="sName1" class="col-xs-3 control-label">用户名：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm align" id="sName1"
+                                                <input type="text" class="form-control input-sm align" id="sName1"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label for="sPsw1" class="col-xs-3 control-label">用户密码：</label>
+                                            <div class="col-xs-8 ">
+                                                <input type="text" class="form-control input-sm align" id="sPsw1"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -238,7 +247,7 @@
                                         <div class="form-group">
                                             <label for="sEmail1" class="col-xs-3 control-label">电子邮箱：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm align" id="sEmail1"
+                                                <input type="email" class="form-control input-sm align" id="sEmail1"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -250,25 +259,25 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="col-xs-3 control-label">权限：</label>
-                                            <div class="col-xs-8">
-                                                <select class=" form-control select-duiqi">
-                                                    <option value="">管理员</option>
-                                                    <option value="">普通用户</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-xs-3 control-label">状态：</label>
-                                            <div class="col-xs-8">
-                                                <label class="control-label">
-                                                    <input type="radio" name="situation" id="normalState2">正常</label>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <label class="control-label">
-                                                    <input type="radio" name="situation" id="forbidState2"> 禁用</label>
-                                            </div>
-                                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="col-xs-3 control-label">权限：</label>-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <select class=" form-control select-duiqi">-->
+<!--                                                    <option value="">管理员</option>-->
+<!--                                                    <option value="">普通用户</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="col-xs-3 control-label">状态：</label>-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <label class="control-label">-->
+<!--                                                    <input type="radio" name="situation" id="normalState2">正常</label>-->
+<!--                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--                                                <label class="control-label">-->
+<!--                                                    <input type="radio" name="situation" id="forbidState2"> 禁用</label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                     </form>
                                 </div>
                             </div>
@@ -304,6 +313,14 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group ">
+                                            <label for="UserInfoPsw" class="col-xs-3 control-label">用户密码：</label>
+                                            <div class="col-xs-8 ">
+                                                <input type="text" class="form-control input-sm align" id="UserInfoPsw"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="UserInfoMail" class="col-xs-3 control-label">电子邮箱：</label>
                                             <div class="col-xs-8">
@@ -319,25 +336,25 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="sPhone" class="col-xs-3 control-label">权限：</label>
-                                            <div class="col-xs-8">
-                                                <select class=" form-control select-duiqi" id="sPhone">
-                                                    <option value="admin">管理员</option>
-                                                    <option value="com_user">普通用户</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-xs-3 control-label">状态：</label>
-                                            <div class="col-xs-8">
-                                                <label class="control-label">
-                                                    <input type="radio" name="situation" id="normalState">正常</label>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <label class="control-label">
-                                                    <input type="radio" name="situation" id="forbidState"> 禁用</label>
-                                            </div>
-                                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="sPhone" class="col-xs-3 control-label">权限：</label>-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <select class=" form-control select-duiqi" id="sPhone">-->
+<!--                                                    <option value="admin">管理员</option>-->
+<!--                                                    <option value="com_user">普通用户</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="col-xs-3 control-label">状态：</label>-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <label class="control-label">-->
+<!--                                                    <input type="radio" name="situation" id="normalState">正常</label>-->
+<!--                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--                                                <label class="control-label">-->
+<!--                                                    <input type="radio" name="situation" id="forbidState"> 禁用</label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                     </form>
                                 </div>
                             </div>
@@ -516,93 +533,93 @@
 
 
             <!-- 修改密码模块 -->
-            <div role="tabpanel" class="tab-pane" id="chan">
-                <div class="check-div form-inline">
+<!--            <div role="tabpanel" class="tab-pane" id="chan">-->
+<!--                <div class="check-div form-inline">-->
 
-                    <div class="col-xs-4">
-                        <input type="text" class="form-control input-sm" placeholder="输入（用户id/ 用户名）">
-                        <button class="btn btn-white btn-xs ">查 询</button>
-                    </div>
+<!--                    <div class="col-xs-4">-->
+<!--                        <input type="text" class="form-control input-sm" placeholder="输入（用户id/ 用户名）">-->
+<!--                        <button class="btn btn-white btn-xs ">查 询</button>-->
+<!--                    </div>-->
 
-                </div>
+<!--                </div>-->
 
-                <!-- 可以改用列表 -->
-                <!--表格列表-->
-                <div class="panel panel-default panel-bs-table-myself-style">
-                    <div class="panel-heading" id="cur_user_files_list">当前查得用户资源</div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover text-nowrap" id="chp-table">
-                                <!--table-bordered-->
-                                <thead class="w-100">
-                                <tr class="row">
-                                    <th class="col-1">#</th>
-                                    <th class="col-1">pid</th>
-                                    <th class="col-2">magnetLinkKey</th>
-                                    <th class="col-1">fromWhichSe</th>
-                                    <th class="col-1">crawledDate</th>
-                                    <th class="col-1">magnetLinkFileSize</th>
-                                    <th class="col-2">magnetLink</th>
-                                    <th class="col-2">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody class="w-100">
-                                <tr class="row">
-                                    <td class="col-1">#</td>
-                                    <td class="col-1">11</td>
-                                    <td class="col-2">xsadda</td>
-                                    <td class="col-1">torrentkitty'</td>
-                                    <td class="col-1">2020-06-20</td>
-                                    <td class="col-1">2GB</td>
-                                    <td class="col-2">magnetLink</td>
-                                    <td class="col-2">操作</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+<!--                &lt;!&ndash; 可以改用列表 &ndash;&gt;-->
+<!--                &lt;!&ndash;表格列表&ndash;&gt;-->
+<!--                <div class="panel panel-default panel-bs-table-myself-style">-->
+<!--                    <div class="panel-heading" id="cur_user_files_list">当前查得用户资源</div>-->
+<!--                    <div class="panel-body">-->
+<!--                        <div class="table-responsive">-->
+<!--                            <table class="table table-striped table-hover text-nowrap" id="chp-table">-->
+<!--                                &lt;!&ndash;table-bordered&ndash;&gt;-->
+<!--                                <thead class="w-100">-->
+<!--                                <tr class="row">-->
+<!--                                    <th class="col-1">#</th>-->
+<!--                                    <th class="col-1">pid</th>-->
+<!--                                    <th class="col-2">magnetLinkKey</th>-->
+<!--                                    <th class="col-1">fromWhichSe</th>-->
+<!--                                    <th class="col-1">crawledDate</th>-->
+<!--                                    <th class="col-1">magnetLinkFileSize</th>-->
+<!--                                    <th class="col-2">magnetLink</th>-->
+<!--                                    <th class="col-2">操作</th>-->
+<!--                                </tr>-->
+<!--                                </thead>-->
+<!--                                <tbody class="w-100">-->
+<!--                                <tr class="row">-->
+<!--                                    <td class="col-1">#</td>-->
+<!--                                    <td class="col-1">11</td>-->
+<!--                                    <td class="col-2">xsadda</td>-->
+<!--                                    <td class="col-1">torrentkitty'</td>-->
+<!--                                    <td class="col-1">2020-06-20</td>-->
+<!--                                    <td class="col-1">2GB</td>-->
+<!--                                    <td class="col-2">magnetLink</td>-->
+<!--                                    <td class="col-2">操作</td>-->
+<!--                                </tr>-->
+<!--                                </tbody>-->
+<!--                            </table>-->
+<!--                        </div>-->
 
-                    </div>
+<!--                    </div>-->
 
-                </div>
-
-
-                <!--弹出修改密码窗口-->
-                <div class="modal fade" id="changeUserPsw" role="dialog" aria-labelledby="gridSystemModalLabel"
-                     style="margin-top: 200px;">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <h6 class="modal-title">修改用户(id:<span id="chPswUser"></span>)密码</h6>
-                                <!--id="gridSystemModalLabel"-->
-                            </div>
-                            <div class="modal-body">
-                                <div class="container-fluid">
-                                    <form class="form-horizontal" id="formChangPsw">
-
-                                        <div class="form-group">
-                                            <label for="newPsw" class="col-xs-3 control-label">重置的新密码：</label>
-                                            <div class="col-xs-8">
-                                                <input class="form-control input-sm align" id="newPsw" placeholder="">
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-green" id="btnChangePsw">修 改</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
+<!--                </div>-->
 
 
-            </div>
+<!--                &lt;!&ndash;弹出修改密码窗口&ndash;&gt;-->
+<!--                <div class="modal fade" id="changeUserPsw" role="dialog" aria-labelledby="gridSystemModalLabel"-->
+<!--                     style="margin-top: 200px;">-->
+<!--                    <div class="modal-dialog" role="document">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-header">-->
+<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+<!--                                        aria-hidden="true">&times;</span></button>-->
+<!--                                <h6 class="modal-title">修改用户(id:<span id="chPswUser"></span>)密码</h6>-->
+<!--                                &lt;!&ndash;id="gridSystemModalLabel"&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            <div class="modal-body">-->
+<!--                                <div class="container-fluid">-->
+<!--                                    <form class="form-horizontal" id="formChangPsw">-->
+
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="newPsw" class="col-xs-3 control-label">重置的新密码：</label>-->
+<!--                                            <div class="col-xs-8">-->
+<!--                                                <input class="form-control input-sm align" id="newPsw" placeholder="">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>-->
+<!--                                <button type="button" class="btn btn-xs btn-green" id="btnChangePsw">修 改</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; /.modal-content &ndash;&gt;-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+<!--                </div>-->
+
+
+<!--            </div>-->
 
 
             <!-- 爬虫参数设置模块 -->
@@ -616,7 +633,7 @@
                 <div class="panel panel-default panel-bs-table-myself-style">
                     <div class="panel-heading" id="setParams">
                         ElasticSearch操作
-                        <button style="margin-left: 130px;" class="btn btn-xs btn-green" id="updateIndex">创建索引库</button>
+                        <button style="margin-left: 130px;" class="btn btn-xs btn-green" id="createIndex">创建索引库</button>
                         <button class="btn btn-xs btn-danger" id="deleteIndex">删除索引库</button>
                         <button class="btn btn-xs btn-default" id="syncIndex">同步数据库和索引库</button>
                     </div>
@@ -726,7 +743,14 @@
         $('#bs-table-list-myself tbody').empty();
 
         //修改表格标题头文本
-        var thead = "<tr><th class='col-1'>#</th><th class='col-1'>用户id</th><th class='col-2'>用户名</th><th class='col-3'>手机</th><th class='col-3'>邮箱</th> <th class='col-2'>操作</th><tr>"
+        var thead = "<tr>" +
+            "<th class='col-1'>#</th>" +
+            "<th class='col-1'>用户id</th>" +
+            "<th class='col-1'>用户名</th>" +
+            "<th class='col-1'>用户密码</th>" +
+            "<th class='col-3'>手机</th>" +
+            "<th class='col-3'>邮箱</th> " +
+            "<th class='col-2'>操作</th><tr>"
         $('#bs-table-list-myself thead').html(thead);
 
         var xhr = new XMLHttpRequest();
@@ -764,8 +788,8 @@
                     newTd1.innerHTML = "<td>"+ (str+1) +"</td>";
                     newTr.append(newTd1);
 
-                    var jArr = [j.uId,j.uName,j.uPhone, j.uEmail];
-                    for (var t = 0;t<4;t++){
+                    var jArr = [j.uId,j.uName,j.uPassword,j.uPhone, j.uEmail];
+                    for (var t = 0;t<5;t++){
                         //动态新建td
                         var newTd = document.createElement('td');
 
@@ -848,6 +872,37 @@
             // },
             error: function () {
                 console.log("获取数据失误");
+
+                //提示信息
+                //清空列表内容
+                $('#magnetLinksTable tbody').empty();
+
+                //修改表格标题头文本
+                // class='col-1'
+                var thead = "<tr>" +
+                    "<th>#</th>" +
+                    "<th>pid</th>" +
+                    "<th>magnetLinkKey</th>" +
+                    "<th>fromWhichSe</th>" +
+                    "<th>crawledDate</th>" +
+                    "<th>magnetLinkFileSize</th>" +
+                    "<th>magnetLink</th>" +
+                    "<th>操作</th><tr>"
+                $('#magnetLinksTable thead').html(thead);
+
+                var newTr = document.createElement('tr');
+                newTr.style.marginLeft = '50px';
+
+                var newTd1 = document.createElement('td');
+
+                //序号
+                newTd1.innerHTML = "<td>" + "--" + "</td>";
+                var newTd2 = document.createElement('td');
+                //提示信息
+                newTd2.innerHTML = "<td>" + "获取数据失败，请刷新" + "</td>";
+                newTr.append(newTd2);
+                $(newTr).appendTo("#magnetLinksTable tbody");
+
 
             }
         });
@@ -1016,12 +1071,14 @@
 
             //获取点击行数据
             var userName   = tdObj[2].innerHTML;
-            var userPhone  = tdObj[3].innerHTML;
-            var userEmail  = tdObj[4].innerHTML;
+            var userPsw  = tdObj[3].innerHTML;
+            var userPhone  = tdObj[4].innerHTML;
+            var userEmail  = tdObj[5].innerHTML;
 
 
             $('#UserInfoName').prop('value',userName);
             $('#UserInfoMail').prop('value',userEmail);
+            $('#UserInfoPsw').prop('value',userPsw);
             $('#UserInfoPhone').prop('value',userPhone);
 
             //确认修改
@@ -1029,13 +1086,14 @@
                 //初始化修改窗口中的内容
 
                 var name = $('#UserInfoName').val();
+                var password = $('#UserInfoPsw').val();
                 var mail = $('#UserInfoMail').val();
                 var phone = $('#UserInfoPhone').val();
                 // console.log("name" +name);
                 // console.log("mail"+mail);
                 // console.log("phone",phone);
 
-                if (name === "" || name === null || mail === "" || mail === null
+                if (name === "" || name === null || mail === "" || mail === null || password === "" || password === null
                     || phone === "" || phone === null){
                     alert("请完善信息");
                 }else {
@@ -1045,6 +1103,7 @@
                         // Long id, String name, String email, String phone
                         data:{"id":id,
                             "name":name,
+                            "password":password,
                             "email":mail,
                             "phone":phone
                         },
@@ -1351,16 +1410,20 @@
         }
     }
 
-    $('#updateIndex').on('click',function () {
+    $('#createIndex').on('click',function () {
         $.ajax({
             url:"createIndex",
             type:"post",
             dataType: "json",
 
             success:function (result) {
-                if (result === "true"){
-                    alert("更新成功");
-                }
+                console.log(result );
+                // if (result === "true"){
+                    alert("创建成功");
+                // }
+            },
+            complete:function(){
+                alert("创建成功");
             },
             error:function () {
                 console.log("data error");

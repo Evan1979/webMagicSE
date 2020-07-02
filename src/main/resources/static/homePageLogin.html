@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 
+    <title>Aurora Magnet Search(登陆页面)</title>
     <link rel="stylesheet" href="./source/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./source/css/definedMyself.css">
 
@@ -72,7 +73,7 @@
                 <label for="name" class="control-label">用户登陆：</label>
 
                 <div class="form-group">
-                    <input type="text" placeholder="请输入用户名" class="form-control" name="name" id="name" value="kelly" autofocus/>
+                    <input type="text" placeholder="请输入用户名" class="form-control" name="name" id="name" value="rain2" autofocus/>
                 </div>
 
                 <div class="form-group">
@@ -143,15 +144,21 @@
             // data: $('#loginForm').serialize(),
             // dataType:"json",
             success:function (data) {
-                console.log(data);
+                // console.log(data);
 
-                var a = document.createElement('a');
-                a.setAttribute('href', 'search.html');
-                document.body.appendChild(a);
-                a.click();
+                if (data === "true"){
+                    var a = document.createElement('a');
+                    a.setAttribute('href', 'search.html');
+                    document.body.appendChild(a);
+                    a.click();
+                }else{
+                    alert("用户名或者密码出错");
+                }
+
             },
             error:function () {
-                console.log("error");
+                console.log("登陆error");
+                alert("用户名或者密码出错");
             }
 
         })

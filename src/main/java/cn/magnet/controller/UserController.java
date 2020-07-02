@@ -1,19 +1,15 @@
 package cn.magnet.controller;
 
-import cn.magnet.pojo.MagnetLink;
-import cn.magnet.pojo.MagnetLinkField;
 import cn.magnet.pojo.User;
-import cn.magnet.service.MagnetLinkRepositoryService;
-import cn.magnet.service.MagnetLinkService;
 import cn.magnet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -53,12 +49,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "changeUserInfo",method = RequestMethod.POST)
-    public String getChangeResult(Long id, String name, String email, String phone){
+    public String getChangeResult(Long id, String name, String password,String email, String phone){
         String result = "true";
 
         User u = new User();
         u.setuId(id);
         u.setuName(name);
+        u.setuPassword(password);
         u.setuEmail(email);
         u.setuPhone(phone);
 
@@ -89,6 +86,42 @@ public class UserController {
              session.setAttribute("userSession",checkedUser);
          }
 
+        return result;
+
+    }
+
+    @RequestMapping(value = "verifyRegisterEmail",method = RequestMethod.POST)
+    public String verifyRegisterEmail(String email){
+        String result = "false";
+        User u = new User();
+        u.setuEmail(email);
+        User checkedUser = this.userService.findUserByEmail(u);
+        if (checkedUser != null){
+            result = "true";
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "registerUser",method = RequestMethod.POST)
+    public String registerUser(String name, String password,String phone, String email, HttpSession session){
+
+        String result = "true";
+        User u = new User();
+        // u.setuId(0L);
+        u.setuName(name);
+        u.setuPassword(password);
+        u.setuEmail(email);
+        u.setuPhone(phone);
+        u.setuRank(0);
+        u.setuBirthday(new Date());
+        u.setuCreateDate(new Date());
+        int changeRows = this.userService.addUser(u);
+
+        if (changeRows == 0){
+            result = "false";
+        }else {
+            session.setAttribute("userSession",u);
+        }
         return result;
 
     }

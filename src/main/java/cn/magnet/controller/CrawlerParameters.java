@@ -10,6 +10,14 @@ import org.springframework.stereotype.Component;
  *
  * @author Evan Ma
  * @since
+ *
+ *  @ConfigurationProperties(prefix = "文件名")
+ *  prefix属性  该注解有一个prefix属性，通过指定的前缀，绑定配置文件中的配置，该注解可以放在类上，也可以放在方法上
+ *  crawlerparams.properties
+ * 可以将外部配置文件（比如applicaition.properties）加载进来，填充对象的对应字段的数据，然后供其他Bean使用。
+ *
+ * @PropertySource与@Value
+ * 这两个注解配合使用获取相应的配置文件中的键值
  **/
 
 @Component

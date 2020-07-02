@@ -8,6 +8,7 @@ import cn.magnet.service.MagnetLinkService;
 import cn.magnet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,6 +56,7 @@ public class MagnetLinkController {
 
 
     @RequestMapping(value = "changeMagnetLinkInfo",method = RequestMethod.POST)
+    @Transactional
     public String getChangeResult(Long id, String magnetLinkKey, String fromWhichSe, String magnetLink){
         String result = "false";
         int rowsUpdate = 0;
